@@ -1,9 +1,16 @@
 myApp.controller('DropdownCtrl', function ($scope, $log) {
-    //$scope.items = [
-    //    'The first choice!',
-    //    'And another choice for you.',
-    //    'but wait! A third!'
-    //];
+    $scope.items = [
+        {name:'Home', value: 'home', href: '#home'},
+        {name:'Dog', value: 'dog', href: '#findapet'},
+        {name: 'Cat', value: 'cat', href: '#findapet'},
+        {name: 'Bird', value: 'bird', href: '#findapet'},
+        {name: 'Small Fury', value: 'smallfury', href: '#findapet'}
+    ];
+
+    $scope.setChoice = function(data){
+        $scope.loc = data;
+        //Do somethign else..
+    };
 
     $scope.status = {
         isopen: false

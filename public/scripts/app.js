@@ -14,10 +14,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
             //templateUrl: 'view/templates/findapet.html'
             controller: 'APIController'
         })
-        .when('/fish', {
-            templateUrl: './view/templates/fish.html',
-            controller: 'buttonController'
-        })
         .otherwise({
             //redirectTo: '/home'
         });
@@ -27,11 +23,13 @@ myApp.config(['$routeProvider', function($routeProvider) {
 myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
 
     $scope.data = {};
-    $scope.dataFactory = DataFactory;
     $scope.showAnimal = false;
+    $scope.randonAnimal;
 
     //to create dropdown menu
     $scope.chooseAnimal = function() {
+        console.log(animal);
+        console.log($scope.animal);
         var animalType = $scope.animal;
         petFinder(animalType);
     };
@@ -68,8 +66,8 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
 
         $http.jsonp(request).then(
             function(response) {
-                $scope.animal = response.data.petfinder.pet;
-                console.log($scope.animal);
+                $scope.randonAnimal = response.data.petfinder.pet;
+                console.log($scope.randonAnimal);
             }
         );
         $scope.showAnimal = true;

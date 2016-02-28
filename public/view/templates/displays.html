@@ -13,17 +13,16 @@
 <!--Dropdown menu.  - ng-show at /home and /findapet only-->
     <div ng-controller="DropdownCtrl">
             <div ng-controller="APIController">
-                        <span name="animalList" ng-change="chooseAnimal()" ng-model="animal" uib-dropdown on-toggle="toggled(open)">
-                              <li value="" selected="selected"><a href id="simple-dropdown" uib-dropdown-toggle>
-                                  Search by Animal Type!
-                              </a></li>
-                              <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
-                                  <li value="home"><a ng-href="#home">Home</a></li>
-                                  <li value="dog"><a ng-href="#findapet">Dog</a></li>
-                                  <li value="cat"><a ng-href="#findapet">Cats</a></li>
-                                  <li value="fishes"><a ng-href="#findapet">Fishes</a></li>
-                              </ul>
-                        </span>
+                    <span uib-dropdown on-toggle="toggled(open)">
+                          <a href id="simple-dropdown" uib-dropdown-toggle>
+                              Search by Animal Type!
+                          </a>
+                          <ul ng-change='chooseAnimal()' ng-model="animal" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                              <li ng-repeat="choice in items">
+                                  <a value="{{choice.value}}" href="{{choice.href}}">{{choice.name}}</a>
+                              </li>
+                          </ul>
+                    </span>
 
             </div>
     </div>
