@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stupid Animals!</title>
+    <script type="text/javascript" src="./vendors/angular.min.js"></script>
+    <script type="text/javascript" src="./vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./vendors/angular-bootstrap.min.js"></script>
+    <script type="text/javascript" src="./scripts/controllers/routeController.js"></script>
+    <script type="text/javascript" src="./scripts/controllers/DropdownCtrl.js"></script>
+    <!--<script type="text/javascript" src="./scripts/factories/APIController.js.js"></script>-->
+    <!--<script type="text/javascript" src="/scripts/factories/dataFactory.js"></script>-->
+    <!--<script type="text/javascript" src="/scripts/controllers/peopleController.js"></script>-->
+    <!--<script type="text/javascript" src="/scripts/controllers/addressController.js"></script>-->
+
+    <link rel="stylesheet" href="./vendors/bootstrap.min.css" />
+</head>
+
+<body ng-app="myApp">
+    <header ng-include="'view/templates/displays.html'"></header>
+
+    <main ng-view=""></main>
+
+
+<footer ng-include="'view/templates/footer.html'"></footer>
+
+</body>
+</html>

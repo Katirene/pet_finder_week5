@@ -1,0 +1,45 @@
+<div ng-controller="routeController">
+
+    <!--Home Header - ng-show at /home and /findapet only-->
+<div ng-show='' class="jumbotron">
+    <h1> Find a Pet ! Header </h1>
+    path at Header: {{getPath();}}
+</div>
+
+    <!--Favorites Counter - on ng-show always-->
+<div>Here is my Favorites Count</div>
+
+
+<!--Dropdown menu.  - ng-show at /home and /findapet only-->
+    <div ng-controller="DropdownCtrl">
+            <div ng-controller="APIController">
+                        <span name="animalList" ng-change="chooseAnimal()" ng-model="animal" uib-dropdown on-toggle="toggled(open)">
+                              <li value="" selected="selected"><a href id="simple-dropdown" uib-dropdown-toggle>
+                                  Search by Animal Type!
+                              </a></li>
+                              <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+                                  <li value="home"><a ng-href="#home">Home</a></li>
+                                  <li value="dog"><a ng-href="#findapet">Dog</a></li>
+                                  <li value="cat"><a ng-href="#findapet">Cats</a></li>
+                                  <li value="fishes"><a ng-href="#findapet">Fishes</a></li>
+                              </ul>
+                        </span>
+
+            </div>
+    </div>
+
+
+
+<!--View Favorites button. - ng-show at /home and /findapet only-->
+    <div ng-show="location.path = '/favorites'">
+        <button><a ng-href="#favorites">View Favorites</a></button>
+        path at Header: {{location.path()}}
+    </div>
+
+<!--Return home button.  ng-show at /findapet and /animal only-->
+    <div ng-show='location.path = "/home"'>
+        <div class="returnHome">
+            <button><a ng-href="#home">Home</a></button>
+        </div>
+    </div>
+</div>
