@@ -1,9 +1,9 @@
-<div ng-controller="routeController">
+<div>
 
     <!--Home Header - ng-show at /home and /findapet only-->
 <div ng-show='' class="jumbotron">
     <h1> Find a Pet ! Header </h1>
-    path at Header: {{getPath();}}
+    path at Header: {{$location.path()}}
 </div>
 
     <!--Favorites Counter - on ng-show always-->

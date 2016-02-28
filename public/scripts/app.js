@@ -57,7 +57,7 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
         var baseURL = 'http://api.petfinder.com/';
         var query = 'pet.getRandom';
         query += '?key=' + key;
-        query += '&animal=' + animalType;
+        query += '&animal=dog';
         query += '&output=basic';
         query += '&format=json';
 
