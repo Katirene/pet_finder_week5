@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
     };
 
     pg.connect(connectionString, function (err, client, done) {
-        client.query("INSERT INTO randonAnimal (breed, name) VALUES ($1, $2) RETURNING id",
+        client.query("INSERT INTO returnedAnimal (breed, name) VALUES ($1, $2) RETURNING id",
             [addAnimal.breed, addAnimal.name],
             function (err, result) {
                 done();
