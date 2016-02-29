@@ -1,18 +1,23 @@
 myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
 
-    //$scope.selectedAnimal = 'rabbit';
+    console.log('APIController');
 
-    //on change call updatePath() to change url
-    $scope.searchAPI = function() {
-        //$scope.location = $location.path();
-        //location.path('/findapet');
+    $scope.selectedAnimal = '';
+
+    $scope.chooseAnimal = function() {
+        var selectedAnimal = $scope.selectedAnimal;
+        searchAPI(selectedAnimal);
+   };
+
+
+    function searchAPI (selectedAnimal) {
 
         var key = 'a80d614ab2bc137e9560bd6f39d4526c';
 
         var baseURL = 'http://api.petfinder.com/';
         var query = 'pet.getRandom';
         query += '?key=' + key;
-        query += '&returnedAnimal=dog';
+        query += '&returnedAnimal=' + selectedAnimal;
         query += '&output=basic';
         query += '&format=json';
 
@@ -28,8 +33,8 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
         //$scope.showAnimal = true;
 
 
-        searchAPI();
-        console.log(returnedAnimal);
-    };
+        //searchAPI();
+
+    }
 
 }]);

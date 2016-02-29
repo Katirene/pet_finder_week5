@@ -1,0 +1,8 @@
+CREATE TABLE animals (
+id SERIAL PRIMARY KEY,
+pet_id INTEGER NOT NULL,
+pet_name VARCHAR (255),
+pet_image varchar (255),
+pet_breed varchar(255),
+pet_desc varchar(100)
+)

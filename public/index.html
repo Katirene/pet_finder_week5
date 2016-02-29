@@ -6,6 +6,7 @@
     <script type="text/javascript" src="./vendors/angular-route.min.js"></script>
     <script type="text/javascript" src="./scripts/app.js"></script>
     <script type="text/javascript" src="./scripts/APIController.js"></script>
+    <script type="text/javascript" src="./scripts/addToFavoritesController.js"></script>
     <script type="text/javascript" src="./vendors/angular-bootstrap.min.js"></script>
     <link rel="stylesheet" href="./vendors/bootstrap.min.css" />
 </head>
@@ -17,11 +18,22 @@
         <div ng-model="selectedAnimal">
             <form>
                 <input type="text" placeholder="dog, cat, bird" ng-model="selectedAnimal"/>
-                <button class="btn btn-default" ng-click="$location.path('/findapet')" ng-click="searchAPI()">Search by animal species!</button>
+                <button class="btn btn-default" ng-click="chooseAnimal()">Search by animal species!</button>
             </form>
         </div>
         <p>{{selectedAnimal}}</p>
+        <p>{{returnedAnimal.animal}}</p>
+        <p>{{returnedAnimal.breeds}}</p>
+        <p>{{returnedAnimal.age}}</p>
+        <p>{{returnedAnimal.description}}</p>
+        <p>{{returnedAnimal.id}}</p>
+        <p>{{returnedAnimal.name}}</p>
+        <p>{{returnedAnimal.breed}}</p>
+        <div ng-controller="addToFavoritesController">
+            <button class="btn btn-default" ng-click="sendFavorite()">Save To Favorites</button>
+        </div>
     </div>
+
 
 
 

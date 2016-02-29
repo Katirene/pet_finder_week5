@@ -11,16 +11,30 @@ if(process.env.DATABASE_URL !== undefined) {
     connectionString = 'postgres://localhost:5432/pet_finder';
 }
 
+//no table column yet for .animalSpecies or for .animal (dog, cat, etc)
 router.post('/', function(req, res) {
+    console.log(req.body);
+
     var results = [];
     var addAnimal = {
-        name: req.body.name,
-        breed: req.body.breed
+        petid: req.body.animalId,
+        name: req.body.animalName,
+        image: req.body.animalImage,
+        breed: req.body.animalBreed.breed,
+        desc: req.body.animalDesc,
+        species: req.body.animalSpecies
+
     };
 
+
+    //if(addAnimal.desc.length > 100) {
+    //    addAnimal.desc = addAnimal.desc.substring(0,100);
+    //}
+    console.log(addAnimal.desc);
+
     pg.connect(connectionString, function (err, client, done) {
-        client.query("INSERT INTO returnedAnimal (breed, name) VALUES ($1, $2) RETURNING id",
-            [addAnimal.breed, addAnimal.name],
+        client.query("INSERT INTO animals (pet_id, pet_name, pet_image, pet_breed, pet_desc, animal_species) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id",
+            [addAnimal.petid, addAnimal.name, addAnimal.image, addAnimal.breed, addAnimal.desc, addAnimal.animalSpecies],
             function (err, result) {
                 done();
                 if (err) {
