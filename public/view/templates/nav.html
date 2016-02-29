@@ -1,39 +1,10 @@
-<!--<div class="row" id="randonAnimal-search">-->
-    <!--<div class="col-md-8 col-md-offset-2">-->
-        <!--<ul class="nav nav-pills nav-justified">-->
-            <!--<li><a ng-href="#home">Home</a></li>-->
-            <!--<li><a ng-href="#dog">Dog</a></li>-->
-            <!--<li><a ng-href="#cat">Cats</a></li>-->
-            <!--<li><a ng-href="#fish">Fishes</a></li>-->
-        <!--</ul>-->
-    <!--</div>-->
-<!--</div>-->
-
-<!--<div ng-controller="DropdownCtrl">-->
-    <!--<span uib-dropdown on-toggle="toggled(open)">-->
-          <!--<a href id="simple-dropdown" uib-dropdown-toggle>-->
-              <!--Click me for a dropdown, yo!-->
-          <!--</a>-->
-          <!--<ul uib-dropdown-menu aria-labelledby="simple-dropdown">-->
-              <!--<li ng-repeat="choice in items">-->
-                  <!--<a href>{{choice}}</a>-->
-              <!--</li>-->
-          <!--</ul>-->
-    <!--</span>-->
-<!--</div>-->
-
-
-<!--<div ng-controller="DropdownCtrl">-->
-    <!--path: {{location.path()}}-->
-    <!--<span uib-dropdown on-toggle="toggled(open)">-->
-          <!--<a href id="simple-dropdown" uib-dropdown-toggle>-->
-              <!--Search by Animal Type!-->
-          <!--</a>-->
-          <!--<ul uib-dropdown-menu aria-labelledby="simple-dropdown">-->
-              <!--<li><a ng-href="#home">Home</a></li>-->
-              <!--<li><a ng-href="#findapet">Dog</a></li>-->
-              <!--<li><a ng-href="#findapet">Cats</a></li>-->
-              <!--<li><a ng-href="#findapet">Fishes</a></li>-->
-          <!--</ul>-->
-    <!--</span>-->
-<!--</div>-->
+<div ng-controller="selectController">
+    <form name="animals">
+        <label for="animalList"> Animal Dropdown </label>
+        <select ng-model='randomAnimal' ng-change='updatePath()' ng-change="chooseAnimal()" name="animalList">
+            <option ng-repeat="choice in items" value="{{choice.value}}">{{choice.name}}
+                <!--<a value="{{choice.value}}" href="{{choice.href}}">{{choice.name}}</a>-->
+            </option>
+        </select>
+    </form>
+</div>

@@ -10,22 +10,9 @@
 <div>Here is my Favorites Count</div>
 
 
-<!--Dropdown menu.  - ng-show at /home and /findapet only-->
-    <div ng-controller="DropdownCtrl">
-            <div ng-controller="APIController">
-                    <span uib-dropdown on-toggle="toggled(open)">
-                          <a href id="simple-dropdown" uib-dropdown-toggle>
-                              Search by Animal Type!
-                          </a>
-                          <ul name="animalList" ng-change='chooseAnimal()' ng-model="randomAnimal" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                              <li ng-repeat="choice in items">
-                                  <a value="{{choice.value}}" href="{{choice.href}}">{{choice.name}}</a>
-                              </li>
-                          </ul>
-                    </span>
 
-            </div>
-    </div>
+<div ng-include="'view/templates/nav.html'"></div>
+
 
     <!--Include if showAnimal is True.  Turns true after API results.-->
     <div ng-include="'view/templates/viewRandomAnimal.html'"></div>
