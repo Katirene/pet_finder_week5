@@ -17,7 +17,7 @@
                           <a href id="simple-dropdown" uib-dropdown-toggle>
                               Search by Animal Type!
                           </a>
-                          <ul ng-change='chooseAnimal()' ng-model="animal" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                          <ul name="animalList" ng-change='chooseAnimal()' ng-model="randomAnimal" uib-dropdown-menu aria-labelledby="simple-dropdown">
                               <li ng-repeat="choice in items">
                                   <a value="{{choice.value}}" href="{{choice.href}}">{{choice.name}}</a>
                               </li>
@@ -27,6 +27,9 @@
             </div>
     </div>
 
+    <!--Include if showAnimal is True.  Turns true after API results.-->
+    <div ng-include="'view/templates/viewRandomAnimal.html'"></div>
+
 
 
 <!--View Favorites button. - ng-show at /home and /findapet only-->
@@ -35,7 +38,7 @@
         path at Header: {{location.path()}}
     </div>
 
-<!--Return home button.  ng-show at /findapet and /animal only-->
+<!--Return home button.  ng-show at /findapet and /randonAnimal only-->
     <div ng-show='location.path = "/home"'>
         <div class="returnHome">
             <button><a ng-href="#home">Home</a></button>

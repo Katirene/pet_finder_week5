@@ -28,9 +28,9 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
 
     //to create dropdown menu
     $scope.chooseAnimal = function() {
-        console.log(animal);
-        console.log($scope.animal);
-        var animalType = $scope.animal;
+        console.log(randonAnimal);
+        console.log($scope.randonAnimal);
+        var animalType = $scope.randonAnimal;
         petFinder(animalType);
     };
 
@@ -45,7 +45,7 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
     //
     //    //var animals = [];
     //    //animals.push(id, name, description, image);
-    //    console.log('animals object from animal controller: ', animals);
+    //    console.log('animals object from randonAnimal controller: ', animals);
     //    $scope.dataFactory.postToDatabase(animals);
     //    return animals;
     //};
@@ -57,7 +57,7 @@ myApp.controller('APIController', ['$scope', '$http', function($scope, $http) {
         var baseURL = 'http://api.petfinder.com/';
         var query = 'pet.getRandom';
         query += '?key=' + key;
-        query += '&animal=dog';
+        query += '&randonAnimal=' + animalType;
         query += '&output=basic';
         query += '&format=json';
 

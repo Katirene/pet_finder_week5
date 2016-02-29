@@ -9,7 +9,7 @@ myApp.factory('DataFactory', ['$scope','$http', function($scope, $http){
         var baseURL = 'http://api.petfinder.com/';
         var query = 'pet.getRandom';
         query += '?key=' + key;
-        query += '&animal=dog';
+        query += '&randonAnimal=dog';
         query += '&output=basic';
         query += '&format=json';
 
@@ -18,8 +18,8 @@ myApp.factory('DataFactory', ['$scope','$http', function($scope, $http){
 
         $http.jsonp(request).then(
             function(response) {
-                $scope.animal = response.data.petfinder.pet;
-                console.log($scope.animal);
+                $scope.randonAnimal = response.data.petfinder.pet;
+                console.log($scope.randonAnimal);
             }
         );
     }
