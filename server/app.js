@@ -2,11 +2,13 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var postAnimal = require('./routes/postAnimal');
+var getAnimal = require('./routes/getAnimal');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/postAnimal', postAnimal);
+app.use('/getAnimal', getAnimal);
 
 
 // Serve back static files

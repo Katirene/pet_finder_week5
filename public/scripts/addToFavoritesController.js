@@ -27,4 +27,5 @@ myApp.controller ('addToFavoritesController', ['$scope', '$http', function($scop
         });
 
     }
+
 }]);

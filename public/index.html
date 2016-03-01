@@ -5,8 +5,10 @@
     <script type="text/javascript" src="./vendors/angular.min.js"></script>
     <script type="text/javascript" src="./vendors/angular-route.min.js"></script>
     <script type="text/javascript" src="./scripts/app.js"></script>
+    <script type="text/javascript" src="./scripts/factories/getRequestToDB.js"></script>
     <script type="text/javascript" src="./scripts/APIController.js"></script>
     <script type="text/javascript" src="./scripts/addToFavoritesController.js"></script>
+    <script type="text/javascript" src="./scripts/favoritesController.js"></script>
     <script type="text/javascript" src="./vendors/angular-bootstrap.min.js"></script>
     <link rel="stylesheet" href="./vendors/bootstrap.min.css" />
 </head>
@@ -32,12 +34,18 @@
         <div ng-controller="addToFavoritesController">
             <button class="btn btn-default" ng-click="sendFavorite()">Save To Favorites</button>
         </div>
+        <div>
+            <ul>
+            <li><a href=#favorites>Get Favorites !</a></li>
+            </ul>
+        </div>
+
+
+        <main ng-view=""></main>
+
     </div>
 
 
-
-
-    <main ng-view=""></main>
 
 
 <!--<footer ng-include="'view/templates/footer.html'"></footer>-->

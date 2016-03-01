@@ -3,16 +3,12 @@ var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap']);
 myApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/home', {
-            templateUrl: './view/index.html',
-            controller: 'routeController'
+            templateUrl: './view/index.html'
+            //controller: 'routeController'
         })
         .when('/favorites', {
-            //templateUrl: 'view/templates/favorites.html'
-            controller: 'routeController'
-        })
-        .when('/findapet', {
-            //templateUrl: 'view/templates/findapet.html'
-            controller: 'APIController'
+            templateUrl: 'templates/favorites.html',
+            controller: 'favoritesController'
         })
         .otherwise({
             //redirectTo: '/home'
